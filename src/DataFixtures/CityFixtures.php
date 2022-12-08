@@ -11,7 +11,6 @@ use App\Entity\City;
 class CityFixtures extends Fixture implements ContainerAwareInterface
 {
     const LIMIT = 20;
-
     private $container;
 
     public function setContainer(ContainerInterface $container = null)
@@ -23,9 +22,7 @@ class CityFixtures extends Fixture implements ContainerAwareInterface
     {
         $serializer = $this->container->get('serializer');
         $filepath = realpath ("./") . "/src/DataFixtures/worldcities_dataset.csv";
-
         $data = $serializer->decode(file_get_contents($filepath), 'csv');
-
         for ($i=0; $i < count($data) && $i < self::LIMIT; $i++) {
             $line = $data[$i];
             $city = new City();
@@ -36,7 +33,6 @@ class CityFixtures extends Fixture implements ContainerAwareInterface
             $this->addReference('city_' . $i, $city);
             $manager->persist($city);
         }
-
         $manager->flush();
     }
 }

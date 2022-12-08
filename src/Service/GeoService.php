@@ -10,8 +10,7 @@ class GeoService
     {
         $factor = pi() / 180;
         $firstStep = 0.5 - cos(($lat2 - $lat1) * $factor) / 2 +
-            cos($lat1 * $factor) * cos($lat2 * $factor) *
-            (1 - cos(($lon2 - $lon1) * $factor)) / 2;
+            cos($lat1 * $factor) * cos($lat2 * $factor) * (1 - cos(($lon2 - $lon1) * $factor)) / 2;
         return 2 * self::EARTH_RADIUS * asin(sqrt($firstStep));
     }
 }

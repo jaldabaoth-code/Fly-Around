@@ -4,7 +4,6 @@
 
 {% block body %}
     <h1>City</h1>
-
     <table class="table">
         <tbody>
         <tr>
@@ -29,10 +28,9 @@
         </tr>
         </tbody>
     </table>
-
+    <div class="d-flex mb-3">
+        <a class="btn btn-primary col-1 mr-3" href="{{ path('city_edit', {'id': city.id}) }}">edit</a>
+        {{ include('city/_delete_form.html.twig') }}
+    </div>
     <a href="{{ path('city_index') }}">back to list</a>
-
-    <a href="{{ path('city_edit', {'id': city.id}) }}">edit</a>
-
-    {{ include('city/_delete_form.html.twig') }}
 {% endblock %}

@@ -13,22 +13,22 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/trip")
+ * @Route("/trip", name="trip_")
  */
 class TripController extends AbstractController
 {
     /**
-     * @Route("/", name="trip_index", methods={"GET"})
+     * @Route("/", name="index", methods={"GET"})
      */
     public function index(TripRepository $tripRepository): Response
     {
         return $this->render('trip/index.html.twig', [
-            'trips' => $tripRepository->findAll(),
+            'trips' => $tripRepository->findAll()
         ]);
     }
 
     /**
-     * @Route("/new", name="trip_new", methods={"GET","POST"})
+     * @Route("/new", name="new", methods={"GET","POST"})
      */
     public function new(Request $request, EntityManagerInterface $entityManager, GeoService $geoService): Response
     {
@@ -45,27 +45,26 @@ class TripController extends AbstractController
             $trip->setDistance($distance);
             $entityManager->persist($trip);
             $entityManager->flush();
-
             return $this->redirectToRoute('trip_index');
         }
         return $this->render('trip/new.html.twig', [
             'trip' => $trip,
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/{id}", name="trip_show", methods={"GET"})
+     * @Route("/{id}", name="show", methods={"GET"})
      */
     public function show(Trip $trip): Response
     {
         return $this->render('trip/show.html.twig', [
-            'trip' => $trip,
+            'trip' => $trip
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="trip_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Trip $trip, GeoService $geoService): Response
     {
@@ -84,12 +83,12 @@ class TripController extends AbstractController
         }
         return $this->render('trip/edit.html.twig', [
             'trip' => $trip,
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/{id}", name="trip_delete", methods={"DELETE"})
+     * @Route("/{id}", name="delete", methods={"DELETE"})
      */
     public function delete(Request $request, Trip $trip): Response
     {
