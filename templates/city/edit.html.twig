@@ -7,7 +7,6 @@
     <div class="container">
         <h1>Edit City</h1>
         {{ include('city/_form.html.twig', {'button_label': 'Update'}) }}
-        <a href="{{ path('city_index') }}">back to list</a>
         {{ include('city/_delete_form.html.twig') }}
     </div>
 {% endblock %}
