@@ -77,7 +77,7 @@ class TripController extends AbstractController
                 $trip->getToCity()->getLatitude(),
                 $trip->getToCity()->getLongitude()
             );
-        $trip->setDistance($distance);
+            $trip->setDistance($distance);
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('trip_index');
         }

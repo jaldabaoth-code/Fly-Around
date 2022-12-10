@@ -6,30 +6,30 @@
     <h1>City</h1>
     <table class="table">
         <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ city.id }}</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>{{ city.name }}</td>
-        </tr>
-        <tr>
-            <th>Latitude</th>
-            <td>{{ city.latitude }}</td>
-        </tr>
-        <tr>
-            <th>Longitude</th>
-            <td>{{ city.longitude }}</td>
-        </tr>
-        <tr>
-            <th>Country</th>
-            <td>{{ city.country }}</td>
-        </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ city.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ city.name }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ city.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ city.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ city.country }}</td>
+            </tr>
         </tbody>
     </table>
     <div class="d-flex justify-content-center">
-        <a class="btn btn-primary col-6 mr-3" href="{{ path('city_edit', {'id': city.id}) }}">Edit</a>
+        <a class="btn btn-primary col-6 mr-3" href="{{ path('city_edit', {id: city.id}) }}">Edit</a>
         {{ include('city/_delete_form.html.twig') }}
     </div>
 {% endblock %}

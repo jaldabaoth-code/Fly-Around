@@ -64,7 +64,6 @@ class CityController extends AbstractController
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
-
             return $this->redirectToRoute('city_index');
         }
         return $this->render('city/edit.html.twig', [
