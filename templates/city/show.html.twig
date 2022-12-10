@@ -30,6 +30,8 @@
     </table>
     <div class="d-flex justify-content-center">
         <a class="btn btn-primary col-6 mr-3" href="{{ path('city_edit', {id: city.id}) }}">Edit</a>
-        {{ include('city/_delete_form.html.twig') }}
+        <div class="col-6 px-0">
+            {{ include('city/_delete_form.html.twig') }}
+        </div>
     </div>
 {% endblock %}

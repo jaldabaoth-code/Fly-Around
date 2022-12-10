@@ -18,8 +18,8 @@
                     <td>{{ trip.id }}</td>
                     <td>{{ trip.distance }}</td>
                     <td>
-                        <a href="{{ path('trip_show', {id: trip.id}) }}">Show</a>
-                        <a href="{{ path('trip_edit', {id: trip.id}) }}">Edit</a>
+                        <a class="btn btn-info" href="{{ path('trip_show', {id: trip.id}) }}">Show</a>
+                        <a class="btn btn-primary" href="{{ path('trip_edit', {id: trip.id}) }}">Edit</a>
                     </td>
                 </tr>
             {% else %}
@@ -29,5 +29,5 @@
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ path('trip_new') }}">New Trip</a>
+    <a class="btn btn-success" href="{{ path('trip_new') }}">New Trip</a>
 {% endblock %}
