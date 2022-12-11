@@ -25,7 +25,11 @@
                 {% block navbar_right %}{% endblock %}
             </div>
         </nav>
-        {% block body %}{% endblock %}
+        <div class="d-flex justify-content-center mt-5">
+            <div class="col-11">
+                {% block body %}{% endblock %}
+            </div>
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

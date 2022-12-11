@@ -21,7 +21,7 @@ class CityController extends AbstractController
     public function index(CityRepository $cityRepository): Response
     {
         return $this->render('city/index.html.twig', [
-            'cities' => $cityRepository->findAll(),
+            'cities' => $cityRepository->findAll()
         ]);
     }
 
@@ -41,7 +41,7 @@ class CityController extends AbstractController
         }
         return $this->render('city/new.html.twig', [
             'city' => $city,
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 
@@ -51,7 +51,7 @@ class CityController extends AbstractController
     public function show(City $city): Response
     {
         return $this->render('city/show.html.twig', [
-            'city' => $city,
+            'city' => $city
         ]);
     }
 
@@ -68,7 +68,7 @@ class CityController extends AbstractController
         }
         return $this->render('city/edit.html.twig', [
             'city' => $city,
-            'form' => $form->createView(),
+            'form' => $form->createView()
         ]);
     }
 

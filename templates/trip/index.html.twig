@@ -2,12 +2,19 @@
 
 {% block title %}Trip index{% endblock %}
 
+{% block navbar_right %}
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="btn btn-success" href="{{ path('trip_new') }}"><i class="far fa-plus-square"></i> New Trip</a>
+        </li>
+    </ul>
+{% endblock %}
+
 {% block body %}
-    <h1>Trip index</h1>
+    <h1>All Trips</h1>
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Distance</th>
                 <th>Actions</th>
             </tr>
@@ -15,11 +22,10 @@
         <tbody>
             {% for trip in trips %}
                 <tr>
-                    <td>{{ trip.id }}</td>
                     <td>{{ trip.distance }}</td>
                     <td>
-                        <a class="btn btn-info" href="{{ path('trip_show', {id: trip.id}) }}">Show</a>
-                        <a class="btn btn-primary" href="{{ path('trip_edit', {id: trip.id}) }}">Edit</a>
+                        <a class="btn btn-info col-5" href="{{ path('trip_show', {id: trip.id}) }}">Show</a>
+                        <a class="btn btn-primary col-5" href="{{ path('trip_edit', {id: trip.id}) }}">Edit</a>
                     </td>
                 </tr>
             {% else %}
@@ -29,5 +35,4 @@
             {% endfor %}
         </tbody>
     </table>
-    <a class="btn btn-success" href="{{ path('trip_new') }}">New Trip</a>
 {% endblock %}

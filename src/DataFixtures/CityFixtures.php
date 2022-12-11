@@ -21,8 +21,8 @@ class CityFixtures extends Fixture implements ContainerAwareInterface
     public function load(ObjectManager $manager)
     {
         $serializer = $this->container->get('serializer');
-        $filepath = realpath ("./") . "/src/DataFixtures/worldcities_dataset.csv";
-        $data = $serializer->decode(file_get_contents($filepath), 'csv');
+        $filePath = realpath ("./") . "/src/DataFixtures/worldcities_dataset.csv";
+        $data = $serializer->decode(file_get_contents($filePath), 'csv');
         for ($i=0; $i < count($data) && $i < self::LIMIT; $i++) {
             $line = $data[$i];
             $city = new City();
