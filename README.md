@@ -11,7 +11,7 @@
 
 1. [Description](#Description)
 2. [Prerequisites](#Prerequisites)
-4. [Installation](#Installation)
+4. [Installation](#Steps)
 
 ### Description
 
@@ -50,6 +50,6 @@ Should you insert more cities in database, just update `const LIMIT = 20` in `sr
 
 ## The Links
 
-<a href="https://wildcodeschool.github.io/workshop-php-symfony-services/">Link to the Workshop instructions</a>
+<a href="https://wildcodeschool.github.io/workshop-php-symfony-services/">Link to <b>The Workshop instructions</b></a>
 
 <a href="https://github.com/WildCodeSchool/php-orleans-202103-worksop-symfony-services">Link to the repository of <b>The Symfony Services Workshop - Fly Around</b></a>
